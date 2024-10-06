@@ -1,0 +1,103 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  height: 100vh;
+  /* Img will not move to right axis*/
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 10px;
+}
+
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  height: 100%;
+  /* z index will tell which layer will come up above other layer */
+  z-index: -1;
+
+}
+
+.background , .foreground{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  /* Fit imaging container -> Cover whole width */
+  object-fit: cover;
+}
+
+.background{
+  transform:translateZ(-40px) scale(5) ;
+}
+
+/* Translate is used to move the img away and scale is used to increase the size of img while keeping that img away */
+
+.foreground{
+  transform:translateZ(-20px) scale(3) ;
+}
+
+h1{
+
+  position: absolute;
+  font-size: 8rem;
+  top: 3rem;
+  left: 50%;
+  text-shadow: 0 0 10px rgba(0, 0, 0,3) ;
+  color: white;
+  transform: translateX(-50%);
+}
+
+section{
+  background-color: rgb(45, 45, 45);
+  color: white;
+  padding: 5rem 0;
+}
+
+.Scheading{
+  font-size:5rem;
+  padding:0 10rem;
+}
+
+.bg{
+  position: relative;
+  width: 100%;
+    /* Using this image will be fixed and text will scroll up and down on it . */
+  background-attachment:fixed ; 
+
+  /* bg position and size is used to fit image correctly   or it does scaling of img*/
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+}
+
+.bg1{
+  background-image: url(sport-1.jpg);
+}
+
+.bg2{
+  background-image: url(sport-2.jpg);
+}
+
+.bg3{
+  background-image: url(sport-3.jpg);
+}
+
+.desc{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  padding:0.5rem 2.5rem;
+  background-color: whitesmoke;
+  transform: translateX(-50px) translateY(-50px);
+  color: black;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
